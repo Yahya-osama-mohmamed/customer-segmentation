@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "SemanticModel",
-    "displayName": "Customer Segmentation Explorer"
+    "displayName": "Cluster Intelligence — Customer Segmentation"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "f906d66e-c5bf-4df7-99d2-995408503ac3"
+    "logicalId": "79edd49b-a1ab-4330-afaf-6e086801fb8b"
   }
 }

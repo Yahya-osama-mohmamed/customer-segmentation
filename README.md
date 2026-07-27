@@ -48,32 +48,41 @@ revenue**.
 ![K selection](notebooks/figures/k_selection.png)
 ![Segments](notebooks/figures/segments_scatter.png)
 
-## The dashboard (`dashboard/SegmentationExplorer/`)
+## The dashboard — Cluster Intelligence (`dashboard/SegmentationExplorer/`)
 
-Built as a **Power BI Project (PBIP)** — open `SegmentationExplorer.pbip` in
-Power BI Desktop and click *Refresh now* once (loads the 802k-row transaction
-table; save afterwards to cache).
+![Power BI dashboard usage](docs/dashboard.gif)
+
+This is a **clustering** dashboard, not a sales dashboard: every page answers a
+question a segmentation owner has to defend in a room.
 
 | Page | What it answers |
 |---|---|
-| **Overview** | Revenue vs customer count by segment, monthly trend, top countries |
-| **Segment Deep-Dive** | Pick a segment: RFM profile, top products, its own trend |
-| **Revenue Trends** | Monthly revenue **by segment** — is Champions revenue growing? Plus seasonality (November peak) |
-| **Customer Explorer** | Individual customers, sliceable by segment/country/year |
+| **Cluster Anatomy** | *Are these four clusters real?* Silhouette-by-K and the inertia elbow (with K=2 shown and rejected), per-cluster cohesion, and the **centroid fingerprint** — each cluster's centre in standardized log-RFM, so you can read what defines it |
+| **Cluster Space** | *Where does each customer sit?* All 5,852 customers plotted in the exact space K-Means optimized in (standardized log-RFM), bubble-sized by lifetime value, plus boundary-margin vs value — the top-right corner is valuable *and* unstable |
+| **Cluster Geography** | *Where does each cluster live?* Filled map of lifetime revenue by country, a bubble map whose slices show each country's **cluster mix**, champion density, and a country × cluster matrix |
+| **Boundary Watch** | *Who is about to change cluster, and what is it worth?* A drift map (current cluster vs nearest rival centroid), value-at-stake by segment, and a ranked call list — **1,735 customers (29.6%) sit on a boundary, carrying $3.81M in lifetime value** |
 
-Interactivity: slicers on every page (segment, country, year), full
-cross-filtering between visuals, and a star-schema model (segment/country
-dimensions filter customers and transactions simultaneously).
+The extra columns that make this possible are computed by
+`src/export_cluster_diagnostics.py`, straight from the fitted model: each
+customer's silhouette, distance to its own centroid, distance to the nearest
+rival centroid, the resulting boundary margin, and which cluster it would join
+next.
 
-> Screenshots for `dashboard/screenshots/` are best taken after the first
-> refresh — one per page.
+Interactivity: segment / cohesion / country slicers on every page, full
+cross-filtering, and a star-schema model. The maps read the customer table
+directly (rather than a pre-rolled country table) so a segment slicer
+re-filters the geography exactly like every other visual.
+
+Open `SegmentationExplorer.pbip` in Power BI Desktop — the model loads five
+small CSVs (< 1 MB total, all committed), so it opens with data already in
+place; no refresh step, no 92 MB transaction file.
 
 ## Repo tour
 
 ```
 notebooks/  01_data_cleaning -> 02_rfm -> 03_clustering -> 04_segment_profiling  (executed)
-src/        rfm.py, clustering.py, export_for_bi.py
-dashboard/  SegmentationExplorer PBIP project + BI-ready CSV extracts
+src/        rfm.py, clustering.py, export_for_bi.py, export_cluster_diagnostics.py
+dashboard/  SegmentationExplorer PBIP project + cluster-diagnostic CSV extracts
 ```
 
 ## Reproduce

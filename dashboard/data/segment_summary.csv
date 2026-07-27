@@ -1,5 +1,0 @@
-Segment,Customers,AvgRecencyDays,AvgFrequency,AvgMonetary,TotalRevenue,AvgOrderValue,AvgProductDiversity,RevenueShare,CustomerShare
-Champions,1114,25.4,19.8,11230.1,12510345.3,568.0,212.0,71.8,19.0
-At Risk,1460,209.0,5.4,2177.3,3178906.1,494.8,87.0,18.2,24.9
-New Customers,1237,28.4,3.0,837.2,1035559.6,316.3,56.3,5.9,21.1
-Hibernating,2041,393.5,1.4,347.7,709653.7,265.3,23.6,4.1,34.9

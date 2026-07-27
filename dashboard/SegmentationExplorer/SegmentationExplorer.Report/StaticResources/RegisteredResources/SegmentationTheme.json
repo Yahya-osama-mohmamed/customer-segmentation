@@ -1,23 +1,23 @@
 {
   "name": "SegmentationTheme",
   "dataColors": [
-    "#6246EA",
-    "#FF8906",
-    "#2CB1BC",
-    "#E45858",
-    "#94A1B2",
-    "#B8B3EC",
-    "#FFB65C",
-    "#232946"
+    "#8AA624",
+    "#FEA405",
+    "#B5CC5E",
+    "#DBE4C9",
+    "#4E5E14",
+    "#FFCE6B",
+    "#6E8A1E",
+    "#EFF3E4"
   ],
   "background": "#FFFFFF",
-  "foreground": "#232946",
-  "tableAccent": "#6246EA",
+  "foreground": "#4E5E14",
+  "tableAccent": "#8AA624",
   "textClasses": {
     "callout": {
       "fontSize": 26,
       "fontFace": "Segoe UI Semibold",
-      "color": "#232946"
+      "color": "#4E5E14"
     },
     "title": {
       "fontSize": 11,
@@ -27,7 +27,7 @@
     "header": {
       "fontSize": 12,
       "fontFace": "Segoe UI Semibold",
-      "color": "#232946"
+      "color": "#4E5E14"
     },
     "label": {
       "fontSize": 9,
@@ -54,7 +54,7 @@
             "show": true,
             "color": {
               "solid": {
-                "color": "#E0E0EF"
+                "color": "#DBE4C9"
               }
             },
             "radius": 8
@@ -94,7 +94,7 @@
           {
             "color": {
               "solid": {
-                "color": "#F2F2FA"
+                "color": "#FFFFF0"
               }
             },
             "transparency": 0
@@ -104,7 +104,7 @@
           {
             "color": {
               "solid": {
-                "color": "#F2F2FA"
+                "color": "#FFFFF0"
               }
             },
             "transparency": 0

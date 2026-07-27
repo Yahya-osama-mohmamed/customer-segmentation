@@ -12,65 +12,13 @@
     "tables": [
       {
         "name": "Customers",
-        "lineageTag": "91666373-870e-4a07-a94b-2ed2cfe4c287",
+        "lineageTag": "568869dd-39bf-4055-b26b-87a7cfcb1da3",
         "columns": [
           {
             "name": "CustomerID",
-            "dataType": "double",
+            "dataType": "int64",
             "sourceColumn": "CustomerID",
-            "lineageTag": "d3c1f237-1125-4573-a021-53d4be149842",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "Segment",
-            "dataType": "string",
-            "sourceColumn": "Segment",
-            "lineageTag": "f7078a4c-690a-4117-9ffc-da70e1a98f99",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "Recency",
-            "dataType": "double",
-            "sourceColumn": "Recency",
-            "lineageTag": "3ca4276c-7fad-479b-8549-6b597f1eb30e",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "Frequency",
-            "dataType": "double",
-            "sourceColumn": "Frequency",
-            "lineageTag": "96b893c8-9e8f-4891-aeb7-645f248288ea",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "Monetary",
-            "dataType": "double",
-            "sourceColumn": "Monetary",
-            "lineageTag": "21ec8c30-4df0-4041-8490-077c2888a9c0",
+            "lineageTag": "b8ab5b38-9a89-4ee0-ba07-e4cc60a6c387",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -78,13 +26,82 @@
                 "value": "User"
               }
             ],
-            "formatString": "$#,0.00"
+            "formatString": "0"
+          },
+          {
+            "name": "Segment",
+            "dataType": "string",
+            "sourceColumn": "Segment",
+            "lineageTag": "d4d2279b-18af-4831-a2f5-25f8f506a770",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country",
+            "lineageTag": "12794e6d-48d4-40dc-a241-d2412562d944",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Country"
+          },
+          {
+            "name": "Recency",
+            "dataType": "int64",
+            "sourceColumn": "Recency",
+            "lineageTag": "5aab1138-cfeb-43c6-84f6-a266b997c0fd",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Frequency",
+            "dataType": "double",
+            "sourceColumn": "Frequency",
+            "lineageTag": "c9324122-99d5-4c2e-9f52-584964333b70",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Monetary",
+            "dataType": "double",
+            "sourceColumn": "Monetary",
+            "lineageTag": "34418da7-506a-4e6a-985d-66eaf3fc8742",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "formatString": "$#,0"
           },
           {
             "name": "AvgOrderValue",
             "dataType": "double",
             "sourceColumn": "AvgOrderValue",
-            "lineageTag": "ee5757d9-3bc1-4e0a-94b8-6ab6889cb44a",
+            "lineageTag": "d9580a1f-e4e7-49f2-9bd5-4c2e6135b2c6",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -98,7 +115,7 @@
             "name": "InterPurchaseStd",
             "dataType": "double",
             "sourceColumn": "InterPurchaseStd",
-            "lineageTag": "4b046c43-dd01-42e1-a5a8-d581722e6d99",
+            "lineageTag": "70bb0dfc-fec8-4ac0-bc65-0ef24e967026",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -111,7 +128,7 @@
             "name": "ProductDiversity",
             "dataType": "double",
             "sourceColumn": "ProductDiversity",
-            "lineageTag": "4cb55592-6729-4cb0-88af-cef2326e20ee",
+            "lineageTag": "439ee474-a40a-42ca-b66c-16b61eb51538",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -124,7 +141,7 @@
             "name": "TenureDays",
             "dataType": "double",
             "sourceColumn": "TenureDays",
-            "lineageTag": "96207d3e-c2cc-4ab0-a50f-916affb9c58a",
+            "lineageTag": "25906a34-bac1-44f2-8892-7643527ef204",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -134,10 +151,131 @@
             ]
           },
           {
-            "name": "Country",
+            "name": "Z_Recency",
+            "dataType": "double",
+            "sourceColumn": "Z_Recency",
+            "lineageTag": "e86caf8d-da59-4b5a-8e48-9142ce32e3ad",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Z_Frequency",
+            "dataType": "double",
+            "sourceColumn": "Z_Frequency",
+            "lineageTag": "dad4bdfd-d601-4a96-9197-3fbd5dee469a",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Z_Monetary",
+            "dataType": "double",
+            "sourceColumn": "Z_Monetary",
+            "lineageTag": "815cc413-facf-4eeb-9196-1ef430c1d0c6",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "DistToCentroid",
+            "dataType": "double",
+            "sourceColumn": "DistToCentroid",
+            "lineageTag": "d13c90c8-a4cc-4358-8418-e541ba01f370",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "formatString": "0.00"
+          },
+          {
+            "name": "DistToRival",
+            "dataType": "double",
+            "sourceColumn": "DistToRival",
+            "lineageTag": "c7c451cd-ad65-4f1d-a326-c1b9a772bfd0",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "formatString": "0.00"
+          },
+          {
+            "name": "NearestRival",
             "dataType": "string",
-            "sourceColumn": "Country",
-            "lineageTag": "4ecbe7d5-f34b-4fc6-9e67-8b441f601b79",
+            "sourceColumn": "NearestRival",
+            "lineageTag": "6ded26e8-8761-4f9d-b524-48effff06b3c",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "BoundaryMargin",
+            "dataType": "double",
+            "sourceColumn": "BoundaryMargin",
+            "lineageTag": "e4ee9a67-6175-460c-a63c-d256193b4385",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "formatString": "0.000"
+          },
+          {
+            "name": "Silhouette",
+            "dataType": "double",
+            "sourceColumn": "Silhouette",
+            "lineageTag": "64b11fad-b695-4f8a-b218-7b647f8a8784",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "formatString": "0.000"
+          },
+          {
+            "name": "Cohesion",
+            "dataType": "string",
+            "sourceColumn": "Cohesion",
+            "lineageTag": "e61ac168-a6cd-452a-ac34-9ac403783b59",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "IsBorderline",
+            "dataType": "double",
+            "sourceColumn": "IsBorderline",
+            "lineageTag": "75c91974-4841-4b76-840f-4162392c1ef5",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -155,9 +293,9 @@
               "type": "m",
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"C:\\Users\\pc\\Downloads\\data\\customer-segmentation\\dashboard\\data\\customers.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\pc\\Downloads\\data\\customer-segmentation\\dashboard\\data\\cluster_customers.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"CustomerID\", type number}, {\"Segment\", type text}, {\"Recency\", type number}, {\"Frequency\", type number}, {\"Monetary\", type number}, {\"AvgOrderValue\", type number}, {\"InterPurchaseStd\", type number}, {\"ProductDiversity\", type number}, {\"TenureDays\", type number}, {\"Country\", type text}}, \"en-US\")",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"CustomerID\", Int64.Type}, {\"Segment\", type text}, {\"Country\", type text}, {\"Recency\", Int64.Type}, {\"Frequency\", type number}, {\"Monetary\", type number}, {\"AvgOrderValue\", type number}, {\"InterPurchaseStd\", type number}, {\"ProductDiversity\", type number}, {\"TenureDays\", type number}, {\"Z_Recency\", type number}, {\"Z_Frequency\", type number}, {\"Z_Monetary\", type number}, {\"DistToCentroid\", type number}, {\"DistToRival\", type number}, {\"NearestRival\", type text}, {\"BoundaryMargin\", type number}, {\"Silhouette\", type number}, {\"Cohesion\", type text}, {\"IsBorderline\", type number}}, \"en-US\")",
                 "in",
                 "    #\"Changed Type\""
               ]
@@ -175,49 +313,115 @@
             "name": "Total Customers",
             "expression": "COUNTROWS('Customers')",
             "formatString": "#,0",
-            "lineageTag": "1eda83a8-f8d1-40e0-b971-e1bf621eac5c"
+            "lineageTag": "20acb926-ee58-4327-91d9-87dee2490e9b"
           },
           {
-            "name": "Avg Recency (days)",
-            "expression": "AVERAGE('Customers'[Recency])",
-            "formatString": "0.0",
-            "lineageTag": "1aa1132a-4976-4dc1-a144-01a32c91e8a2"
-          },
-          {
-            "name": "Avg Frequency (orders)",
-            "expression": "AVERAGE('Customers'[Frequency])",
-            "formatString": "0.0",
-            "lineageTag": "de8b1862-f6a9-4ba7-a10b-99427e9203fe"
+            "name": "Lifetime Revenue",
+            "expression": "SUM('Customers'[Monetary])",
+            "formatString": "$#,0",
+            "lineageTag": "2c4fc790-a9bf-4d78-9ac1-2b6f1b1bd8bc"
           },
           {
             "name": "Avg Customer Value",
             "expression": "AVERAGE('Customers'[Monetary])",
             "formatString": "$#,0",
-            "lineageTag": "4acbe68f-e9af-414b-8ae7-8d023b82e98d"
+            "lineageTag": "7427db7d-9f21-4a99-9400-d6fcdb20c24d"
           },
           {
-            "name": "Avg Order Value",
-            "expression": "AVERAGE('Customers'[AvgOrderValue])",
-            "formatString": "$0.00",
-            "lineageTag": "2c996c4a-af8d-4740-aab6-78813a5246df"
-          },
-          {
-            "name": "Avg Product Diversity",
-            "expression": "AVERAGE('Customers'[ProductDiversity])",
+            "name": "Avg Recency (days)",
+            "expression": "AVERAGE('Customers'[Recency])",
             "formatString": "0.0",
-            "lineageTag": "4324cddd-35fd-4f40-b2a2-fc6e8f5ca416"
+            "lineageTag": "cff958cd-bc95-4568-b34b-eea7fc042f23"
+          },
+          {
+            "name": "Avg Frequency (orders)",
+            "expression": "AVERAGE('Customers'[Frequency])",
+            "formatString": "0.0",
+            "lineageTag": "a99fecb1-4f36-4b2a-b99e-75ab6f7760d3"
+          },
+          {
+            "name": "Avg Silhouette",
+            "expression": "AVERAGE('Customers'[Silhouette])",
+            "formatString": "0.000",
+            "lineageTag": "837c3179-3bd2-40d0-b843-2d1bccbae03c"
+          },
+          {
+            "name": "Avg Distance to Centroid",
+            "expression": "AVERAGE('Customers'[DistToCentroid])",
+            "formatString": "0.00",
+            "lineageTag": "74492190-bab2-4b0c-8531-75631882a67c"
+          },
+          {
+            "name": "Avg Boundary Margin",
+            "expression": "AVERAGE('Customers'[BoundaryMargin])",
+            "formatString": "0.000",
+            "lineageTag": "c6f40b9a-8c56-4800-a1c9-34ce494eecab"
+          },
+          {
+            "name": "Borderline Customers",
+            "expression": "SUM('Customers'[IsBorderline])",
+            "formatString": "#,0",
+            "lineageTag": "57712354-b41d-4a37-a72c-7e114b4ddd05"
+          },
+          {
+            "name": "Borderline %",
+            "expression": "DIVIDE(SUM('Customers'[IsBorderline]), COUNTROWS('Customers')) * 100",
+            "formatString": "0.0",
+            "lineageTag": "5327b42c-6af4-4584-bd9e-de24d269d7bf"
+          },
+          {
+            "name": "Value at Stake",
+            "expression": "CALCULATE(SUM('Customers'[Monetary]), 'Customers'[Cohesion] = \"Borderline\")",
+            "formatString": "$#,0",
+            "lineageTag": "cbf07e2e-4fa5-48f5-972f-5dafe987b8a3"
+          },
+          {
+            "name": "Clusters (K)",
+            "expression": "DISTINCTCOUNT('Customers'[Segment])",
+            "formatString": "0",
+            "lineageTag": "9d240567-45b4-434c-87c6-a4761cbac79d"
+          },
+          {
+            "name": "Countries",
+            "expression": "DISTINCTCOUNT('Customers'[Country])",
+            "formatString": "0",
+            "lineageTag": "5a03ff2a-ada1-4d5c-b07a-88d567a058ce"
+          },
+          {
+            "name": "Champion Share %",
+            "expression": "DIVIDE(CALCULATE(COUNTROWS('Customers'), 'Customers'[Segment] = \"Champions\"), COUNTROWS('Customers')) * 100",
+            "formatString": "0.0",
+            "lineageTag": "eb9126a2-e337-4a96-8835-778ca12a5367"
+          },
+          {
+            "name": "Champions at the Edge",
+            "expression": "CALCULATE(COUNTROWS('Customers'), 'Customers'[Segment] = \"Champions\", 'Customers'[Cohesion] = \"Borderline\")",
+            "formatString": "#,0",
+            "lineageTag": "d218f827-95bf-443a-aea8-fb206b754933"
+          },
+          {
+            "name": "Champion Value at Risk",
+            "expression": "CALCULATE(SUM('Customers'[Monetary]), 'Customers'[Segment] = \"Champions\", 'Customers'[Cohesion] = \"Borderline\")",
+            "formatString": "$#,0",
+            "lineageTag": "5a8211ac-06d1-4fa2-9105-9b8391f44c2e"
+          },
+          {
+            "name": "Revenue Share %",
+            "expression": "DIVIDE(SUM('Customers'[Monetary]), CALCULATE(SUM('Customers'[Monetary]), ALL('Customers'))) * 100",
+            "formatString": "0.0",
+            "lineageTag": "f4206026-b513-4502-83c1-cccd99480591"
           }
         ]
       },
       {
-        "name": "Transactions",
-        "lineageTag": "9883149a-175d-4385-9aa9-96710a8eb6b1",
+        "name": "Centroids",
+        "lineageTag": "22717ce8-7b6f-4c2b-b5ee-e9d27c7f276b",
         "columns": [
           {
-            "name": "Invoice",
+            "name": "Segment",
             "dataType": "string",
-            "sourceColumn": "Invoice",
-            "lineageTag": "133699d9-4fee-40ac-8168-d1be47715ce5",
+            "sourceColumn": "Segment",
+            "lineageTag": "b0a6c582-cd24-43ab-95e5-54629b5ea457",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -227,28 +431,106 @@
             ]
           },
           {
-            "name": "Date",
-            "dataType": "dateTime",
-            "sourceColumn": "Date",
-            "lineageTag": "27c156c6-d1a5-4c6a-842d-7a497f8c9160",
+            "name": "Feature",
+            "dataType": "string",
+            "sourceColumn": "Feature",
+            "lineageTag": "d38a7ee7-f056-46fc-979e-acb136accdf3",
             "summarizeBy": "none",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "User"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
               }
             ],
-            "formatString": "yyyy-mm-dd"
+            "sortByColumn": "FeatureOrder"
           },
           {
-            "name": "Year",
+            "name": "FeatureOrder",
+            "dataType": "int64",
+            "sourceColumn": "FeatureOrder",
+            "lineageTag": "179a697c-94df-42f9-a8ae-e75300d0c935",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "ZScore",
             "dataType": "double",
-            "sourceColumn": "Year",
-            "lineageTag": "70f139a5-0785-4131-8ffb-b4b57ff821e9",
+            "sourceColumn": "ZScore",
+            "lineageTag": "09fe5955-adf7-4151-80cb-0deae514dd4a",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "formatString": "0.00"
+          },
+          {
+            "name": "ActualValue",
+            "dataType": "double",
+            "sourceColumn": "ActualValue",
+            "lineageTag": "7a51f1dd-3316-4c6a-a680-f4bef8fc98be",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Customers",
+            "dataType": "double",
+            "sourceColumn": "Customers",
+            "lineageTag": "a0d9f4c2-ce60-42c1-b2f5-55513d2d4487",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Centroids",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\pc\\Downloads\\data\\customer-segmentation\\dashboard\\data\\cluster_centroids.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Segment\", type text}, {\"Feature\", type text}, {\"FeatureOrder\", Int64.Type}, {\"ZScore\", type number}, {\"ActualValue\", type number}, {\"Customers\", type number}}, \"en-US\")",
+                "in",
+                "    #\"Changed Type\""
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "KSelection",
+        "lineageTag": "eeea5ec2-e72b-425b-8aa6-ba0da5202247",
+        "columns": [
+          {
+            "name": "K",
+            "dataType": "double",
+            "sourceColumn": "K",
+            "lineageTag": "c0dec522-7a89-4596-925c-10e28393692c",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -259,23 +541,10 @@
             "formatString": "0"
           },
           {
-            "name": "MonthNum",
+            "name": "Inertia",
             "dataType": "double",
-            "sourceColumn": "MonthNum",
-            "lineageTag": "a50366d7-076f-454a-8596-0168211659d0",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "Month",
-            "dataType": "string",
-            "sourceColumn": "Month",
-            "lineageTag": "60875a2f-e738-4719-a495-ddc6611162e0",
+            "sourceColumn": "Inertia",
+            "lineageTag": "88acab76-e983-46ec-bb97-4f722353079c",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -283,104 +552,13 @@
                 "value": "User"
               }
             ],
-            "sortByColumn": "MonthNum"
+            "formatString": "#,0"
           },
           {
-            "name": "YearMonth",
-            "dataType": "string",
-            "sourceColumn": "YearMonth",
-            "lineageTag": "c3a03856-6049-4e16-8244-b26413d84c36",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "CustomerID",
+            "name": "Silhouette",
             "dataType": "double",
-            "sourceColumn": "CustomerID",
-            "lineageTag": "899ab104-8508-450b-b9ea-cf8c99a617d7",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "Segment",
-            "dataType": "string",
-            "sourceColumn": "Segment",
-            "lineageTag": "e6788234-19cc-47db-bdf3-10d7e4d28bab",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "Country",
-            "dataType": "string",
-            "sourceColumn": "Country",
-            "lineageTag": "ce1ad961-7611-4c77-9ffa-02991095d8a8",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "StockCode",
-            "dataType": "string",
-            "sourceColumn": "StockCode",
-            "lineageTag": "b8f61ec1-04fa-4ce6-a793-6baaab2bc40a",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "Description",
-            "dataType": "string",
-            "sourceColumn": "Description",
-            "lineageTag": "72e12f82-cf02-4723-8480-c9be316e233b",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "Quantity",
-            "dataType": "double",
-            "sourceColumn": "Quantity",
-            "lineageTag": "46f07b1b-6ae0-42d1-9697-1650e813923e",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "Price",
-            "dataType": "double",
-            "sourceColumn": "Price",
-            "lineageTag": "b9329036-e72a-4062-ae2d-d4aae1eaaaa8",
+            "sourceColumn": "Silhouette",
+            "lineageTag": "d2019901-cde5-4b40-af39-d03425049283",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -388,34 +566,46 @@
                 "value": "User"
               }
             ],
-            "formatString": "$0.00"
+            "formatString": "0.000"
           },
           {
-            "name": "Revenue",
-            "dataType": "double",
-            "sourceColumn": "Revenue",
-            "lineageTag": "4298c32a-2589-4974-bda7-e7f464717155",
+            "name": "Chosen",
+            "dataType": "string",
+            "sourceColumn": "Chosen",
+            "lineageTag": "80cb48ec-f4ba-4c91-b522-ab8d70720af6",
             "summarizeBy": "none",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "User"
               }
-            ],
-            "formatString": "$#,0.00"
+            ]
+          },
+          {
+            "name": "Verdict",
+            "dataType": "string",
+            "sourceColumn": "Verdict",
+            "lineageTag": "71ce8e09-0c5b-40ef-b3fe-7c66e9bdbb17",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
           }
         ],
         "partitions": [
           {
-            "name": "Transactions",
+            "name": "KSelection",
             "mode": "import",
             "source": {
               "type": "m",
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"C:\\Users\\pc\\Downloads\\data\\customer-segmentation\\dashboard\\data\\transactions.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\pc\\Downloads\\data\\customer-segmentation\\dashboard\\data\\k_selection.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Invoice\", type text}, {\"Date\", type date}, {\"Year\", type number}, {\"MonthNum\", type number}, {\"Month\", type text}, {\"YearMonth\", type text}, {\"CustomerID\", type number}, {\"Segment\", type text}, {\"Country\", type text}, {\"StockCode\", type text}, {\"Description\", type text}, {\"Quantity\", type number}, {\"Price\", type number}, {\"Revenue\", type number}}, \"en-US\")",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"K\", type number}, {\"Inertia\", type number}, {\"Silhouette\", type number}, {\"Chosen\", type text}, {\"Verdict\", type text}}, \"en-US\")",
                 "in",
                 "    #\"Changed Type\""
               ]
@@ -430,205 +620,28 @@
         ],
         "measures": [
           {
-            "name": "Total Revenue",
-            "expression": "SUM('Transactions'[Revenue])",
-            "formatString": "$#,0",
-            "lineageTag": "0ba6d49f-950b-48a3-8135-c57ae446d7ed"
+            "name": "Chosen K",
+            "expression": "MAXX(FILTER(ALL('KSelection'), 'KSelection'[Verdict] = \"Selected\"), 'KSelection'[K])",
+            "formatString": "0",
+            "lineageTag": "f73f54cc-7fc6-42c9-a9c1-2161bae1b02c"
           },
           {
-            "name": "Orders",
-            "expression": "DISTINCTCOUNT('Transactions'[Invoice])",
-            "formatString": "#,0",
-            "lineageTag": "c3e9e4f4-032a-4eb8-a954-415f637df750"
-          },
-          {
-            "name": "Units Sold",
-            "expression": "SUM('Transactions'[Quantity])",
-            "formatString": "#,0",
-            "lineageTag": "48d1dc9a-903c-44eb-9b4c-5fcbd7e6b097"
-          },
-          {
-            "name": "Avg Basket",
-            "expression": "DIVIDE([Total Revenue], [Orders])",
-            "formatString": "$0.00",
-            "lineageTag": "a3a0c546-f5bb-4aa2-8b9b-5cab4c535e6c"
-          },
-          {
-            "name": "Active Customers",
-            "expression": "DISTINCTCOUNT('Transactions'[CustomerID])",
-            "formatString": "#,0",
-            "lineageTag": "76aa2fff-e762-4aed-bbce-30856b8a7b48"
-          }
-        ]
-      },
-      {
-        "name": "SegmentSummary",
-        "lineageTag": "26d3f10f-9876-4aec-a284-8be3548fcfc3",
-        "columns": [
-          {
-            "name": "Segment",
-            "dataType": "string",
-            "sourceColumn": "Segment",
-            "lineageTag": "22e51002-e399-44e0-a0c7-6b9bc9411305",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "Customers",
-            "dataType": "double",
-            "sourceColumn": "Customers",
-            "lineageTag": "513dd6ba-9e4b-4733-9f0c-f9289b8464bd",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "AvgRecencyDays",
-            "dataType": "double",
-            "sourceColumn": "AvgRecencyDays",
-            "lineageTag": "a0c79beb-be2c-4b39-96a1-69c07bb3b275",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "AvgFrequency",
-            "dataType": "double",
-            "sourceColumn": "AvgFrequency",
-            "lineageTag": "424f6bcd-f2ce-45d2-b69e-5c8663554ca0",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "AvgMonetary",
-            "dataType": "double",
-            "sourceColumn": "AvgMonetary",
-            "lineageTag": "609cf649-4e3a-4184-8eea-d0d5e4976508",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "TotalRevenue",
-            "dataType": "double",
-            "sourceColumn": "TotalRevenue",
-            "lineageTag": "14b12445-6090-45c9-8ac9-a70e06fbe59c",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "AvgOrderValue",
-            "dataType": "double",
-            "sourceColumn": "AvgOrderValue",
-            "lineageTag": "fec1872d-2f9a-4e66-9c60-b98446e10b41",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "AvgProductDiversity",
-            "dataType": "double",
-            "sourceColumn": "AvgProductDiversity",
-            "lineageTag": "95620f31-c168-4af4-a277-45c3ab69edad",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "RevenueShare",
-            "dataType": "double",
-            "sourceColumn": "RevenueShare",
-            "lineageTag": "1262bfe6-ab16-4fba-92e5-3d1ee82fbc83",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          },
-          {
-            "name": "CustomerShare",
-            "dataType": "double",
-            "sourceColumn": "CustomerShare",
-            "lineageTag": "88564971-4dee-4c36-b01b-22c9606ba4d4",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ]
-          }
-        ],
-        "partitions": [
-          {
-            "name": "SegmentSummary",
-            "mode": "import",
-            "source": {
-              "type": "m",
-              "expression": [
-                "let",
-                "    Source = Csv.Document(File.Contents(\"C:\\Users\\pc\\Downloads\\data\\customer-segmentation\\dashboard\\data\\segment_summary.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
-                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Segment\", type text}, {\"Customers\", type number}, {\"AvgRecencyDays\", type number}, {\"AvgFrequency\", type number}, {\"AvgMonetary\", type number}, {\"TotalRevenue\", type number}, {\"AvgOrderValue\", type number}, {\"AvgProductDiversity\", type number}, {\"RevenueShare\", type number}, {\"CustomerShare\", type number}}, \"en-US\")",
-                "in",
-                "    #\"Changed Type\""
-              ]
-            }
-          }
-        ],
-        "annotations": [
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
+            "name": "Silhouette at Chosen K",
+            "expression": "MAXX(FILTER(ALL('KSelection'), 'KSelection'[Verdict] = \"Selected\"), 'KSelection'[Silhouette])",
+            "formatString": "0.000",
+            "lineageTag": "94555350-35c0-4f46-b286-cf158ef4f136"
           }
         ]
       },
       {
         "name": "DimSegment",
-        "lineageTag": "6ee1d15e-6bc4-4745-9dc6-74f76401bb97",
+        "lineageTag": "abe2faff-f03b-4b35-8aed-9871f68c27ef",
         "columns": [
           {
             "name": "Segment",
             "dataType": "string",
             "sourceColumn": "Segment",
-            "lineageTag": "03c0c544-2afb-4808-88fa-9880ec247fa4",
+            "lineageTag": "2521cc75-5617-4ca0-a3c1-95b00ea89b6e",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -664,20 +677,21 @@
       },
       {
         "name": "DimCountry",
-        "lineageTag": "1e88c79e-645c-4682-85a8-9192de283f73",
+        "lineageTag": "f390447d-8ad7-4adb-a998-3faaedc0f6fb",
         "columns": [
           {
             "name": "Country",
             "dataType": "string",
             "sourceColumn": "Country",
-            "lineageTag": "7ec56b22-9542-4551-940d-9368cf920cba",
+            "lineageTag": "f26fde68-9b06-46f8-95ec-1ea572636280",
             "summarizeBy": "none",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "User"
               }
-            ]
+            ],
+            "dataCategory": "Country"
           }
         ],
         "partitions": [
@@ -703,12 +717,54 @@
             "value": "Table"
           }
         ]
+      },
+      {
+        "name": "DimCohesion",
+        "lineageTag": "8a5316d8-7f6f-4609-941e-1f6dc9a315f8",
+        "columns": [
+          {
+            "name": "Cohesion",
+            "dataType": "string",
+            "sourceColumn": "Cohesion",
+            "lineageTag": "4bb2a6db-4c9a-4a88-afee-b292780baf06",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimCohesion",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\pc\\Downloads\\data\\customer-segmentation\\dashboard\\data\\dim_cohesion.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Cohesion\", type text}}, \"en-US\")",
+                "in",
+                "    #\"Changed Type\""
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
       }
     ],
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Customers\", \"Transactions\", \"SegmentSummary\", \"DimSegment\", \"DimCountry\"]"
+        "value": "[\"Customers\", \"Centroids\", \"KSelection\", \"DimSegment\", \"DimCountry\", \"DimCohesion\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -717,32 +773,32 @@
     ],
     "relationships": [
       {
-        "name": "c1ef451f-77c5-4002-b89b-1728ded5fd2e",
+        "name": "53563ce0-ec0d-489c-94ac-11960208c336",
         "fromTable": "Customers",
         "fromColumn": "Segment",
         "toTable": "DimSegment",
         "toColumn": "Segment"
       },
       {
-        "name": "9f26f8c4-0efd-4f03-8463-4e52b6fe25d6",
-        "fromTable": "Transactions",
-        "fromColumn": "Segment",
-        "toTable": "DimSegment",
-        "toColumn": "Segment"
-      },
-      {
-        "name": "05158311-ca33-42d0-9a6b-68ba3939454f",
+        "name": "ad5373af-ab5f-49e0-b8ce-668c2c5aa6e8",
         "fromTable": "Customers",
         "fromColumn": "Country",
         "toTable": "DimCountry",
         "toColumn": "Country"
       },
       {
-        "name": "8b61bfe6-a0d9-47cf-86c3-27b8ad963aba",
-        "fromTable": "Transactions",
-        "fromColumn": "Country",
-        "toTable": "DimCountry",
-        "toColumn": "Country"
+        "name": "2a79353c-e23f-4db3-9270-46d0e0ac735e",
+        "fromTable": "Customers",
+        "fromColumn": "Cohesion",
+        "toTable": "DimCohesion",
+        "toColumn": "Cohesion"
+      },
+      {
+        "name": "f266d20c-4833-4cff-8ee2-6130a27f976d",
+        "fromTable": "Centroids",
+        "fromColumn": "Segment",
+        "toTable": "DimSegment",
+        "toColumn": "Segment"
       }
     ]
   }
