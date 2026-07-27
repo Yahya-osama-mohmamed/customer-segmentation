@@ -1,0 +1,749 @@
+{
+  "name": "SegmentationExplorer",
+  "compatibilityLevel": 1550,
+  "model": {
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "Customers",
+        "lineageTag": "91666373-870e-4a07-a94b-2ed2cfe4c287",
+        "columns": [
+          {
+            "name": "CustomerID",
+            "dataType": "double",
+            "sourceColumn": "CustomerID",
+            "lineageTag": "d3c1f237-1125-4573-a021-53d4be149842",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Segment",
+            "dataType": "string",
+            "sourceColumn": "Segment",
+            "lineageTag": "f7078a4c-690a-4117-9ffc-da70e1a98f99",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Recency",
+            "dataType": "double",
+            "sourceColumn": "Recency",
+            "lineageTag": "3ca4276c-7fad-479b-8549-6b597f1eb30e",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Frequency",
+            "dataType": "double",
+            "sourceColumn": "Frequency",
+            "lineageTag": "96b893c8-9e8f-4891-aeb7-645f248288ea",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Monetary",
+            "dataType": "double",
+            "sourceColumn": "Monetary",
+            "lineageTag": "21ec8c30-4df0-4041-8490-077c2888a9c0",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "formatString": "$#,0.00"
+          },
+          {
+            "name": "AvgOrderValue",
+            "dataType": "double",
+            "sourceColumn": "AvgOrderValue",
+            "lineageTag": "ee5757d9-3bc1-4e0a-94b8-6ab6889cb44a",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "formatString": "$#,0.00"
+          },
+          {
+            "name": "InterPurchaseStd",
+            "dataType": "double",
+            "sourceColumn": "InterPurchaseStd",
+            "lineageTag": "4b046c43-dd01-42e1-a5a8-d581722e6d99",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "ProductDiversity",
+            "dataType": "double",
+            "sourceColumn": "ProductDiversity",
+            "lineageTag": "4cb55592-6729-4cb0-88af-cef2326e20ee",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "TenureDays",
+            "dataType": "double",
+            "sourceColumn": "TenureDays",
+            "lineageTag": "96207d3e-c2cc-4ab0-a50f-916affb9c58a",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country",
+            "lineageTag": "4ecbe7d5-f34b-4fc6-9e67-8b441f601b79",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Customers",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\pc\\Downloads\\data\\customer-segmentation\\dashboard\\data\\customers.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"CustomerID\", type number}, {\"Segment\", type text}, {\"Recency\", type number}, {\"Frequency\", type number}, {\"Monetary\", type number}, {\"AvgOrderValue\", type number}, {\"InterPurchaseStd\", type number}, {\"ProductDiversity\", type number}, {\"TenureDays\", type number}, {\"Country\", type text}}, \"en-US\")",
+                "in",
+                "    #\"Changed Type\""
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Customers",
+            "expression": "COUNTROWS('Customers')",
+            "formatString": "#,0",
+            "lineageTag": "1eda83a8-f8d1-40e0-b971-e1bf621eac5c"
+          },
+          {
+            "name": "Avg Recency (days)",
+            "expression": "AVERAGE('Customers'[Recency])",
+            "formatString": "0.0",
+            "lineageTag": "1aa1132a-4976-4dc1-a144-01a32c91e8a2"
+          },
+          {
+            "name": "Avg Frequency (orders)",
+            "expression": "AVERAGE('Customers'[Frequency])",
+            "formatString": "0.0",
+            "lineageTag": "de8b1862-f6a9-4ba7-a10b-99427e9203fe"
+          },
+          {
+            "name": "Avg Customer Value",
+            "expression": "AVERAGE('Customers'[Monetary])",
+            "formatString": "$#,0",
+            "lineageTag": "4acbe68f-e9af-414b-8ae7-8d023b82e98d"
+          },
+          {
+            "name": "Avg Order Value",
+            "expression": "AVERAGE('Customers'[AvgOrderValue])",
+            "formatString": "$0.00",
+            "lineageTag": "2c996c4a-af8d-4740-aab6-78813a5246df"
+          },
+          {
+            "name": "Avg Product Diversity",
+            "expression": "AVERAGE('Customers'[ProductDiversity])",
+            "formatString": "0.0",
+            "lineageTag": "4324cddd-35fd-4f40-b2a2-fc6e8f5ca416"
+          }
+        ]
+      },
+      {
+        "name": "Transactions",
+        "lineageTag": "9883149a-175d-4385-9aa9-96710a8eb6b1",
+        "columns": [
+          {
+            "name": "Invoice",
+            "dataType": "string",
+            "sourceColumn": "Invoice",
+            "lineageTag": "133699d9-4fee-40ac-8168-d1be47715ce5",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date",
+            "lineageTag": "27c156c6-d1a5-4c6a-842d-7a497f8c9160",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "formatString": "yyyy-mm-dd"
+          },
+          {
+            "name": "Year",
+            "dataType": "double",
+            "sourceColumn": "Year",
+            "lineageTag": "70f139a5-0785-4131-8ffb-b4b57ff821e9",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "formatString": "0"
+          },
+          {
+            "name": "MonthNum",
+            "dataType": "double",
+            "sourceColumn": "MonthNum",
+            "lineageTag": "a50366d7-076f-454a-8596-0168211659d0",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month",
+            "lineageTag": "60875a2f-e738-4719-a495-ddc6611162e0",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "sortByColumn": "MonthNum"
+          },
+          {
+            "name": "YearMonth",
+            "dataType": "string",
+            "sourceColumn": "YearMonth",
+            "lineageTag": "c3a03856-6049-4e16-8244-b26413d84c36",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "CustomerID",
+            "dataType": "double",
+            "sourceColumn": "CustomerID",
+            "lineageTag": "899ab104-8508-450b-b9ea-cf8c99a617d7",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Segment",
+            "dataType": "string",
+            "sourceColumn": "Segment",
+            "lineageTag": "e6788234-19cc-47db-bdf3-10d7e4d28bab",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country",
+            "lineageTag": "ce1ad961-7611-4c77-9ffa-02991095d8a8",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "StockCode",
+            "dataType": "string",
+            "sourceColumn": "StockCode",
+            "lineageTag": "b8f61ec1-04fa-4ce6-a793-6baaab2bc40a",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Description",
+            "dataType": "string",
+            "sourceColumn": "Description",
+            "lineageTag": "72e12f82-cf02-4723-8480-c9be316e233b",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Quantity",
+            "dataType": "double",
+            "sourceColumn": "Quantity",
+            "lineageTag": "46f07b1b-6ae0-42d1-9697-1650e813923e",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Price",
+            "dataType": "double",
+            "sourceColumn": "Price",
+            "lineageTag": "b9329036-e72a-4062-ae2d-d4aae1eaaaa8",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "formatString": "$0.00"
+          },
+          {
+            "name": "Revenue",
+            "dataType": "double",
+            "sourceColumn": "Revenue",
+            "lineageTag": "4298c32a-2589-4974-bda7-e7f464717155",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "formatString": "$#,0.00"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Transactions",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\pc\\Downloads\\data\\customer-segmentation\\dashboard\\data\\transactions.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Invoice\", type text}, {\"Date\", type date}, {\"Year\", type number}, {\"MonthNum\", type number}, {\"Month\", type text}, {\"YearMonth\", type text}, {\"CustomerID\", type number}, {\"Segment\", type text}, {\"Country\", type text}, {\"StockCode\", type text}, {\"Description\", type text}, {\"Quantity\", type number}, {\"Price\", type number}, {\"Revenue\", type number}}, \"en-US\")",
+                "in",
+                "    #\"Changed Type\""
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Revenue",
+            "expression": "SUM('Transactions'[Revenue])",
+            "formatString": "$#,0",
+            "lineageTag": "0ba6d49f-950b-48a3-8135-c57ae446d7ed"
+          },
+          {
+            "name": "Orders",
+            "expression": "DISTINCTCOUNT('Transactions'[Invoice])",
+            "formatString": "#,0",
+            "lineageTag": "c3e9e4f4-032a-4eb8-a954-415f637df750"
+          },
+          {
+            "name": "Units Sold",
+            "expression": "SUM('Transactions'[Quantity])",
+            "formatString": "#,0",
+            "lineageTag": "48d1dc9a-903c-44eb-9b4c-5fcbd7e6b097"
+          },
+          {
+            "name": "Avg Basket",
+            "expression": "DIVIDE([Total Revenue], [Orders])",
+            "formatString": "$0.00",
+            "lineageTag": "a3a0c546-f5bb-4aa2-8b9b-5cab4c535e6c"
+          },
+          {
+            "name": "Active Customers",
+            "expression": "DISTINCTCOUNT('Transactions'[CustomerID])",
+            "formatString": "#,0",
+            "lineageTag": "76aa2fff-e762-4aed-bbce-30856b8a7b48"
+          }
+        ]
+      },
+      {
+        "name": "SegmentSummary",
+        "lineageTag": "26d3f10f-9876-4aec-a284-8be3548fcfc3",
+        "columns": [
+          {
+            "name": "Segment",
+            "dataType": "string",
+            "sourceColumn": "Segment",
+            "lineageTag": "22e51002-e399-44e0-a0c7-6b9bc9411305",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "Customers",
+            "dataType": "double",
+            "sourceColumn": "Customers",
+            "lineageTag": "513dd6ba-9e4b-4733-9f0c-f9289b8464bd",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "AvgRecencyDays",
+            "dataType": "double",
+            "sourceColumn": "AvgRecencyDays",
+            "lineageTag": "a0c79beb-be2c-4b39-96a1-69c07bb3b275",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "AvgFrequency",
+            "dataType": "double",
+            "sourceColumn": "AvgFrequency",
+            "lineageTag": "424f6bcd-f2ce-45d2-b69e-5c8663554ca0",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "AvgMonetary",
+            "dataType": "double",
+            "sourceColumn": "AvgMonetary",
+            "lineageTag": "609cf649-4e3a-4184-8eea-d0d5e4976508",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "TotalRevenue",
+            "dataType": "double",
+            "sourceColumn": "TotalRevenue",
+            "lineageTag": "14b12445-6090-45c9-8ac9-a70e06fbe59c",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "AvgOrderValue",
+            "dataType": "double",
+            "sourceColumn": "AvgOrderValue",
+            "lineageTag": "fec1872d-2f9a-4e66-9c60-b98446e10b41",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "AvgProductDiversity",
+            "dataType": "double",
+            "sourceColumn": "AvgProductDiversity",
+            "lineageTag": "95620f31-c168-4af4-a277-45c3ab69edad",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "RevenueShare",
+            "dataType": "double",
+            "sourceColumn": "RevenueShare",
+            "lineageTag": "1262bfe6-ab16-4fba-92e5-3d1ee82fbc83",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "name": "CustomerShare",
+            "dataType": "double",
+            "sourceColumn": "CustomerShare",
+            "lineageTag": "88564971-4dee-4c36-b01b-22c9606ba4d4",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "SegmentSummary",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\pc\\Downloads\\data\\customer-segmentation\\dashboard\\data\\segment_summary.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Segment\", type text}, {\"Customers\", type number}, {\"AvgRecencyDays\", type number}, {\"AvgFrequency\", type number}, {\"AvgMonetary\", type number}, {\"TotalRevenue\", type number}, {\"AvgOrderValue\", type number}, {\"AvgProductDiversity\", type number}, {\"RevenueShare\", type number}, {\"CustomerShare\", type number}}, \"en-US\")",
+                "in",
+                "    #\"Changed Type\""
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "DimSegment",
+        "lineageTag": "6ee1d15e-6bc4-4745-9dc6-74f76401bb97",
+        "columns": [
+          {
+            "name": "Segment",
+            "dataType": "string",
+            "sourceColumn": "Segment",
+            "lineageTag": "03c0c544-2afb-4808-88fa-9880ec247fa4",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimSegment",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\pc\\Downloads\\data\\customer-segmentation\\dashboard\\data\\dim_segment.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Segment\", type text}}, \"en-US\")",
+                "in",
+                "    #\"Changed Type\""
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "DimCountry",
+        "lineageTag": "1e88c79e-645c-4682-85a8-9192de283f73",
+        "columns": [
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country",
+            "lineageTag": "7ec56b22-9542-4551-940d-9368cf920cba",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimCountry",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\pc\\Downloads\\data\\customer-segmentation\\dashboard\\data\\dim_country.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Country\", type text}}, \"en-US\")",
+                "in",
+                "    #\"Changed Type\""
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Customers\", \"Transactions\", \"SegmentSummary\", \"DimSegment\", \"DimCountry\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "c1ef451f-77c5-4002-b89b-1728ded5fd2e",
+        "fromTable": "Customers",
+        "fromColumn": "Segment",
+        "toTable": "DimSegment",
+        "toColumn": "Segment"
+      },
+      {
+        "name": "9f26f8c4-0efd-4f03-8463-4e52b6fe25d6",
+        "fromTable": "Transactions",
+        "fromColumn": "Segment",
+        "toTable": "DimSegment",
+        "toColumn": "Segment"
+      },
+      {
+        "name": "05158311-ca33-42d0-9a6b-68ba3939454f",
+        "fromTable": "Customers",
+        "fromColumn": "Country",
+        "toTable": "DimCountry",
+        "toColumn": "Country"
+      },
+      {
+        "name": "8b61bfe6-a0d9-47cf-86c3-27b8ad963aba",
+        "fromTable": "Transactions",
+        "fromColumn": "Country",
+        "toTable": "DimCountry",
+        "toColumn": "Country"
+      }
+    ]
+  }
+}

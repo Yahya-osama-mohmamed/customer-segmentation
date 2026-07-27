@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+data/raw/
+data/processed/
+dashboard/data/transactions.csv
+.ipynb_checkpoints/
+.vscode/
+.DS_Store

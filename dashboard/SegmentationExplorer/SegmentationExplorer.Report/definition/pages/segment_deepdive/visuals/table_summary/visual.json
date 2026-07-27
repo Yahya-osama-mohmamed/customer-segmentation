@@ -1,0 +1,229 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "table_summary",
+  "position": {
+    "x": 216,
+    "y": 480,
+    "z": 0,
+    "width": 1040,
+    "height": 216
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SegmentSummary"
+                    }
+                  },
+                  "Property": "Segment"
+                }
+              },
+              "queryRef": "SegmentSummary.Segment",
+              "nativeQueryRef": "Segment"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SegmentSummary"
+                        }
+                      },
+                      "Property": "Customers"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(SegmentSummary.Customers)",
+              "nativeQueryRef": "Sum of Customers",
+              "displayName": "Customers"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SegmentSummary"
+                        }
+                      },
+                      "Property": "AvgRecencyDays"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(SegmentSummary.AvgRecencyDays)",
+              "nativeQueryRef": "Sum of AvgRecencyDays",
+              "displayName": "Avg Recency"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SegmentSummary"
+                        }
+                      },
+                      "Property": "AvgFrequency"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(SegmentSummary.AvgFrequency)",
+              "nativeQueryRef": "Sum of AvgFrequency",
+              "displayName": "Avg Frequency"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SegmentSummary"
+                        }
+                      },
+                      "Property": "AvgMonetary"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(SegmentSummary.AvgMonetary)",
+              "nativeQueryRef": "Sum of AvgMonetary",
+              "displayName": "Avg Monetary"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SegmentSummary"
+                        }
+                      },
+                      "Property": "TotalRevenue"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(SegmentSummary.TotalRevenue)",
+              "nativeQueryRef": "Sum of TotalRevenue",
+              "displayName": "Total Revenue"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SegmentSummary"
+                        }
+                      },
+                      "Property": "RevenueShare"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(SegmentSummary.RevenueShare)",
+              "nativeQueryRef": "Sum of RevenueShare",
+              "displayName": "Revenue %"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SegmentSummary"
+                        }
+                      },
+                      "Property": "CustomerShare"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(SegmentSummary.CustomerShare)",
+              "nativeQueryRef": "Sum of CustomerShare",
+              "displayName": "Customer %"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "SegmentSummary"
+                      }
+                    },
+                    "Property": "TotalRevenue"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segment Profile Reference (all segments)'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
