@@ -25,12 +25,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
         with:
-          python-version: "3.11"
-
-      - name: Install nbconvert
-        run: pip install nbconvert jupyter
+          version: "0.12.5"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
 
       - name: Render
         # The notebook is published exactly as committed, outputs and all. It is
@@ -39,7 +39,7 @@ jobs:
         # or silently publish an empty analysis.
         run: |
           mkdir -p site
-          jupyter nbconvert --to html --output-dir site --output index \
+          uv run --frozen --with nbconvert --with jupyter jupyter nbconvert --to html --output-dir site --output index \
             customer_segmentation.ipynb
           cp -r figures site/figures 2>/dev/null || true
           ls -lh site

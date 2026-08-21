@@ -21,24 +21,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
         with:
-          python-version: "3.11"
-      - run: pip install ruff==0.16.4
+          version: "0.12.5"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
       - name: Ruff
-        run: ruff check --output-format=github .
+        run: uv run --frozen ruff check --output-format=github .
 
   security:
     name: Dependency audit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
         with:
-          python-version: "3.11"
-      - run: pip install pip-audit
+          version: "0.12.5"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
       # Advisory, not blocking: a fresh CVE in a transitive pin should not turn
       # the whole portfolio red overnight. Dependabot opens the fixing PR.
-      - name: pip-audit
+      # The audit runs against the resolved lockfile, so it covers the whole
+      # transitive tree rather than just the direct pins.
+      - name: Audit the locked dependency tree
         continue-on-error: true
-        run: pip-audit -r requirements.txt --desc
+        run: |
+          uv export --frozen --no-emit-project --format requirements-txt > locked-requirements.txt
+          uvx pip-audit -r locked-requirements.txt --desc

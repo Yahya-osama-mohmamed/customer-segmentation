@@ -120,9 +120,13 @@ spending beyond the cheapest reactivation and accept most won't return.
 ## Reproduce
 
 ```bash
-python -m venv venv && venv/Scripts/activate    # bin/activate on macOS/Linux
-pip install -r requirements.txt
+uv sync            # creates .venv and installs the locked dependency tree
 ```
+Dependencies are managed with [uv](https://docs.astral.sh/uv/): `pyproject.toml`
+declares them, `uv.lock` pins the entire transitive tree, and `uv sync` installs
+exactly that. The lockfile is what CI and the container build install from, so
+"works on my machine" and "works in the image" are the same resolution.
+
 
 Download [Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii) to
 `data/raw/online_retail_II.xlsx`, then run the notebook top to bottom (~4 minutes, most of
@@ -133,6 +137,7 @@ customer_segmentation.ipynb   the analysis
 figures/                      generated figures
 dashboard/                    Power BI project + the CSVs it reads
 .github/workflows/            lint + dependency audit, and the Pages build
+pyproject.toml + uv.lock      dependencies, pinned to the exact tree
 ```
 
 Seed is fixed at 42 throughout, so the segment assignments reproduce exactly.
