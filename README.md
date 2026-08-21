@@ -5,6 +5,17 @@ deliverable.
 
 **[→ Read the analysis](customer_segmentation.ipynb)** — one self-contained notebook.
 
+## 🚢 Published
+
+[![CI](https://github.com/Yahya-osama-mohmamed/customer-segmentation/actions/workflows/ci.yml/badge.svg)](https://github.com/Yahya-osama-mohmamed/customer-segmentation/actions/workflows/ci.yml)
+[![Pages](https://github.com/Yahya-osama-mohmamed/customer-segmentation/actions/workflows/pages.yml/badge.svg)](https://github.com/Yahya-osama-mohmamed/customer-segmentation/actions/workflows/pages.yml)
+
+The executed analysis is published at **https://yahya-osama-mohmamed.github.io/customer-segmentation/** — rebuilt by GitHub Actions on every push.
+
+There is no container here: nothing in this repo is a service, and wrapping a
+web shell around an analysis to have something to deploy would be inventing a
+product that does not exist. The analysis is the deliverable.
+
 ---
 
 Which customers are worth spending marketing money on, and which aren't?
@@ -121,6 +132,7 @@ it reading the workbook).
 customer_segmentation.ipynb   the analysis
 figures/                      generated figures
 dashboard/                    Power BI project + the CSVs it reads
+.github/workflows/            lint + dependency audit, and the Pages build
 ```
 
 Seed is fixed at 42 throughout, so the segment assignments reproduce exactly.
@@ -129,16 +141,3 @@ Seed is fixed at 42 throughout, so the segment assignments reproduce exactly.
 
 MIT for the code. Online Retail II is distributed by UCI under its own terms and isn't
 included here.
-
----
-
-## 🚢 Published
-
-[![CI](https://github.com/Yahya-osama-mohmamed/customer-segmentation/actions/workflows/ci.yml/badge.svg)](https://github.com/Yahya-osama-mohmamed/customer-segmentation/actions/workflows/ci.yml)
-[![Pages](https://github.com/Yahya-osama-mohmamed/customer-segmentation/actions/workflows/pages.yml/badge.svg)](https://github.com/Yahya-osama-mohmamed/customer-segmentation/actions/workflows/pages.yml)
-
-The executed analysis is published at **https://yahya-osama-mohmamed.github.io/customer-segmentation/** — rebuilt by GitHub Actions on every push.
-
-There is no container here: nothing in this repo is a service, and wrapping a
-web shell around an analysis to have something to deploy would be inventing a
-product that does not exist. The analysis is the deliverable.
