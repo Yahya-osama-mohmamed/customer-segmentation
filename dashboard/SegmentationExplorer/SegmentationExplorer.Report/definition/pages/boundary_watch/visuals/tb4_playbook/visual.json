@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "tb4_playbook",
   "position": {
-    "x": 24,
-    "y": 466,
-    "z": 1000,
-    "width": 180,
-    "height": 230
+    "x": 23.940886699507388,
+    "y": 479.70443349753697,
+    "z": 11000,
+    "height": 216.35467980295567,
+    "width": 180
   },
   "visual": {
     "visualType": "textbox",
@@ -22,8 +22,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
-                      "fontWeight": "600",
-                      "color": "#4E5E14"
+                      "color": "#4e5e14"
                     }
                   }
                 ]
@@ -35,7 +34,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
-                      "color": "#53606E"
+                      "color": "#53606e"
                     }
                   }
                 ]

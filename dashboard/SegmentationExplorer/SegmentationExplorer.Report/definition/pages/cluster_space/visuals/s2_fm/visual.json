@@ -1,16 +1,15 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "s2_fm",
   "position": {
     "x": 848,
     "y": 172,
-    "z": 0,
-    "width": 408,
-    "height": 288
+    "z": 6000,
+    "height": 288,
+    "width": 408
   },
   "visual": {
     "visualType": "scatterChart",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Category": {
@@ -27,7 +26,8 @@
                 }
               },
               "queryRef": "Customers.CustomerID",
-              "nativeQueryRef": "CustomerID"
+              "nativeQueryRef": "CustomerID",
+              "active": true
             }
           ]
         },
@@ -68,7 +68,8 @@
                 }
               },
               "queryRef": "Avg(Customers.Z_Frequency)",
-              "nativeQueryRef": "Avg of Z_Frequency"
+              "nativeQueryRef": "Avg of Z_Frequency",
+              "active": true
             }
           ]
         },
@@ -293,6 +294,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

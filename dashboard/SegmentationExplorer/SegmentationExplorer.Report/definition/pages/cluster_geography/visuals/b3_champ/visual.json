@@ -1,16 +1,15 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "b3_champ",
   "position": {
-    "x": 24,
-    "y": 476,
+    "x": 23.940886699507388,
+    "y": 476.1576354679803,
     "z": 0,
-    "width": 400,
-    "height": 220
+    "height": 219.90147783251231,
+    "width": 399.90147783251234
   },
   "visual": {
     "visualType": "clusteredBarChart",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Category": {
@@ -27,7 +26,8 @@
                 }
               },
               "queryRef": "DimCountry.Country",
-              "nativeQueryRef": "Country"
+              "nativeQueryRef": "Country",
+              "active": true
             }
           ]
         },
@@ -116,6 +116,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

@@ -1,16 +1,15 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "t3_top",
   "position": {
-    "x": 1008,
-    "y": 228,
-    "z": 0,
-    "width": 248,
-    "height": 240
+    "x": 1019.7044334975369,
+    "y": 227.88177339901478,
+    "z": 12000,
+    "height": 240.29556650246306,
+    "width": 236.74876847290642
   },
   "visual": {
     "visualType": "tableEx",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -94,6 +93,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

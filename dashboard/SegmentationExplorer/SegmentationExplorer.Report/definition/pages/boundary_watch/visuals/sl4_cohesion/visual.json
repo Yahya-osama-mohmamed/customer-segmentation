@@ -1,16 +1,15 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "sl4_cohesion",
   "position": {
     "x": 24,
     "y": 244,
-    "z": 0,
-    "width": 180,
-    "height": 146
+    "z": 5000,
+    "height": 146,
+    "width": 180
   },
   "visual": {
     "visualType": "slicer",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -27,11 +26,32 @@
                 }
               },
               "queryRef": "DimCohesion.Cohesion",
-              "nativeQueryRef": "Cohesion"
+              "nativeQueryRef": "Cohesion",
+              "active": true
             }
           ]
         }
       }
+    },
+    "objects": {
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -62,20 +82,6 @@
         }
       ]
     },
-    "objects": {
-      "header": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ]
-    }
+    "drillFilterOtherVisuals": true
   }
 }

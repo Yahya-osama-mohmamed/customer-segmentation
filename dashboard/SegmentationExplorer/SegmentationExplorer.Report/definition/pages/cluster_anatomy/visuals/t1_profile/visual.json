@@ -1,16 +1,15 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "t1_profile",
   "position": {
-    "x": 736,
-    "y": 476,
-    "z": 0,
-    "width": 520,
-    "height": 220
+    "x": 573.86018237082067,
+    "y": 475.62310030395139,
+    "z": 10000,
+    "height": 220.790273556231,
+    "width": 418.23708206686933
   },
   "visual": {
     "visualType": "tableEx",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -154,6 +153,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

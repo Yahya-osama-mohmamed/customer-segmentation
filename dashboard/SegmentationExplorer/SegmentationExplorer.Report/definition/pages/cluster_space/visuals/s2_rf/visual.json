@@ -1,16 +1,15 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "s2_rf",
   "position": {
     "x": 216,
     "y": 172,
-    "z": 0,
-    "width": 620,
-    "height": 288
+    "z": 7000,
+    "height": 288,
+    "width": 620
   },
   "visual": {
     "visualType": "scatterChart",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Category": {
@@ -27,7 +26,8 @@
                 }
               },
               "queryRef": "Customers.CustomerID",
-              "nativeQueryRef": "CustomerID"
+              "nativeQueryRef": "CustomerID",
+              "active": true
             }
           ]
         },
@@ -46,52 +46,6 @@
               },
               "queryRef": "DimSegment.Segment",
               "nativeQueryRef": "Segment"
-            }
-          ]
-        },
-        "X": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Customers"
-                        }
-                      },
-                      "Property": "Z_Recency"
-                    }
-                  },
-                  "Function": 1
-                }
-              },
-              "queryRef": "Avg(Customers.Z_Recency)",
-              "nativeQueryRef": "Avg of Z_Recency"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Customers"
-                        }
-                      },
-                      "Property": "Z_Frequency"
-                    }
-                  },
-                  "Function": 1
-                }
-              },
-              "queryRef": "Avg(Customers.Z_Frequency)",
-              "nativeQueryRef": "Avg of Z_Frequency"
             }
           ]
         },
@@ -115,6 +69,53 @@
               },
               "queryRef": "Sum(Customers.Monetary)",
               "nativeQueryRef": "Sum of Monetary"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Customers"
+                        }
+                      },
+                      "Property": "Z_Recency"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(Customers.Z_Recency)",
+              "nativeQueryRef": "Avg of Z_Recency",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Customers"
+                        }
+                      },
+                      "Property": "Z_Frequency"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(Customers.Z_Frequency)",
+              "nativeQueryRef": "Avg of Z_Frequency"
             }
           ]
         }
@@ -316,6 +317,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

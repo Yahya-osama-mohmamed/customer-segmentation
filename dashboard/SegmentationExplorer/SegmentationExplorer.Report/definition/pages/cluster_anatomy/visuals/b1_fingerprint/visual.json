@@ -1,16 +1,15 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "b1_fingerprint",
   "position": {
-    "x": 24,
-    "y": 476,
+    "x": 24.316109422492403,
+    "y": 475.62310030395139,
     "z": 0,
-    "width": 700,
-    "height": 220
+    "height": 220.790273556231,
+    "width": 523.28267477203644
   },
   "visual": {
     "visualType": "clusteredColumnChart",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Category": {
@@ -27,7 +26,8 @@
                 }
               },
               "queryRef": "Centroids.Feature",
-              "nativeQueryRef": "Feature"
+              "nativeQueryRef": "Feature",
+              "active": true
             }
           ]
         },
@@ -270,6 +270,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

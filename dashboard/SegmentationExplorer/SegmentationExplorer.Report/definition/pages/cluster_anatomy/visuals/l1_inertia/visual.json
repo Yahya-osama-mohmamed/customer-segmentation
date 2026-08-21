@@ -1,16 +1,15 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "l1_inertia",
   "position": {
     "x": 440,
     "y": 228,
-    "z": 0,
-    "width": 404,
-    "height": 240
+    "z": 7000,
+    "height": 240,
+    "width": 404
   },
   "visual": {
     "visualType": "lineChart",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Category": {
@@ -27,7 +26,8 @@
                 }
               },
               "queryRef": "KSelection.K",
-              "nativeQueryRef": "K"
+              "nativeQueryRef": "K",
+              "active": true
             }
           ]
         },
@@ -121,6 +121,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }
