@@ -11,8 +11,8 @@ license = { text = "MIT" }
 dependencies = [
     "numpy==2.4.6",
     "pandas==3.0.5",
-    "scikit-learn==1.9.0",
-    "matplotlib==3.11.1",
+    "scikit-learn==1.9.1",
+    "matplotlib==3.11.2",
     "openpyxl==3.1.5",
 ]
 
@@ -20,7 +20,7 @@ dependencies = [
 dev = [
     "ipykernel==7.3.0",
     "nbconvert==7.17.1",
-    "ruff==0.16.4",
+    "ruff==0.16.7",
 ]
 
 [tool.ruff]
